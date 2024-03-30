@@ -41,7 +41,7 @@ const Projects = (props: Props) => {
                 <strong>Description: </strong>
                 <ul className="px-6 leading-8 mt-2">
                   {project.description.map((item, idx) => (
-                    <li key={idx} className="truncate">
+                    <li key={item} className="truncate">
                       ✅ {item}
                     </li>
                   ))}
