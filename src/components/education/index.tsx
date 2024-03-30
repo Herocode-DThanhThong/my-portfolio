@@ -6,7 +6,7 @@ type Props = {};
 
 const Education = (props: Props) => {
   return (
-    <div className="border-b-2 py-8">
+    <div id="education" className="border-b-2 py-8">
       <h1 className="text-4xl capitalize font-bold text-txtPrimary">
         Education
       </h1>

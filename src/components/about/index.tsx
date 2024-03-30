@@ -7,7 +7,7 @@ type Props = {};
 
 const About = (props: Props) => {
   return (
-    <div className="border-b-2 py-8">
+    <div id="about" className="border-b-2 py-8">
       <Information />
       <Technical />
       <Contact />

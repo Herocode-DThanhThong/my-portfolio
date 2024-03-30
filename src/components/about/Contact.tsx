@@ -17,9 +17,7 @@ const Contact = (props: Props) => {
               color: "#e60505",
             }}
           />
-          <p className="text-sky-600 underline">
-            duongthanhthong0611@gmail.com
-          </p>
+          <p className="text-sky-600">duongthanhthong0611@gmail.com</p>
         </div>
         <div className="my-4 flex items-center gap-2">
           <AiFillLinkedin
