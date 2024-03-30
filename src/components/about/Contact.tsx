@@ -3,6 +3,7 @@ import { BiLogoGmail } from "react-icons/bi";
 import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import Link from "next/link";
+import { contactList } from "@/data";
 type Props = {};
 
 const Contact = (props: Props) => {
@@ -17,7 +18,7 @@ const Contact = (props: Props) => {
               color: "#e60505",
             }}
           />
-          <p className="text-sky-600">duongthanhthong0611@gmail.com</p>
+          <p className="text-sky-600">{contactList.gmail.title}</p>
         </div>
         <div className="my-4 flex items-center gap-2">
           <AiFillLinkedin
@@ -28,12 +29,10 @@ const Contact = (props: Props) => {
           />
           <Link
             className="text-sky-600 block"
-            href={
-              "https://www.linkedin.com/in/th%C3%B4ng-d%C6%B0%C6%A1ng-0113182b7/"
-            }
+            href={contactList.linkedin.url}
             target="_blank"
           >
-            Linkedin - Duong Thanh Thong
+            {contactList.linkedin.title}
           </Link>
         </div>
         <div className="my-4 flex items-center gap-2">
@@ -45,10 +44,10 @@ const Contact = (props: Props) => {
           />
           <Link
             className="text-sky-600 block"
-            href={"https://github.com/Herocode-DThanhThong"}
+            href={contactList.github.url}
             target="_blank"
           >
-            Github - Duong Thanh Thong
+            {contactList.github.title}
           </Link>
         </div>
       </div>

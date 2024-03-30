@@ -1,3 +1,4 @@
+import { objectives } from "@/data";
 import React from "react";
 
 type Props = {};
@@ -9,13 +10,9 @@ const Targets = (props: Props) => {
         My Objective:
       </p>
       <ul className="list-disc px-6 leading-10">
-        <li>
-          Improve foreign language skills, and approach IELTS with a goal of{" "}
-          <strong>7.0 point</strong>
-        </li>
-        <li>Master the frontend skills</li>
-        <li>Master the backend skills</li>
-        <li>Become the fullstack developer</li>
+        {objectives.map((obj, idx) => (
+          <li key={obj}>{obj}</li>
+        ))}
       </ul>
     </>
   );

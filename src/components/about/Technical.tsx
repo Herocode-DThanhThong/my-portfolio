@@ -3,6 +3,7 @@ import { SiSpringboot } from "react-icons/si";
 import { BiLogoReact } from "react-icons/bi";
 import { BsDatabase } from "react-icons/bs";
 import { AiOutlineCode } from "react-icons/ai";
+import { skillList } from "@/data";
 type Props = {};
 
 const Technical = (props: Props) => {
@@ -20,10 +21,7 @@ const Technical = (props: Props) => {
           </span>
           <span>
             <strong className="text-[18px]">Front-end: </strong>
-            <span className="font-semibold">
-              ReactJS (NextJS, Hook, Redux Toolkit), Angular, Material UI,
-              TailwindCSS, Bootstrap, Antd, Typescript
-            </span>
+            <span className="font-semibold">{skillList.fe}</span>
           </span>
         </p>
         <p className="my-3 leading-8 flex gap-2 items-center">
@@ -37,9 +35,7 @@ const Technical = (props: Props) => {
           </span>
           <span>
             <strong className="text-[18px]">Back-end: </strong>
-            <span className="font-semibold">
-              Java (Springboot), NodeJs (ExpressJs)
-            </span>
+            <span className="font-semibold">{skillList.be}</span>
           </span>
         </p>
         <p className="my-3 leading-8 flex gap-2 items-center">
@@ -53,9 +49,7 @@ const Technical = (props: Props) => {
           </span>
           <span>
             <strong className="text-[18px]">Database: </strong>
-            <span className="font-semibold">
-              Postgres, MySQL, MongoDB, Redis
-            </span>
+            <span className="font-semibold">{skillList.db}</span>
           </span>
         </p>
         <p className="my-3 leading-8 flex gap-2 items-center">
@@ -69,9 +63,7 @@ const Technical = (props: Props) => {
           </span>
           <span>
             <strong className="text-[18px]">Other: </strong>
-            <span className="font-semibold">
-              Git, Docker, Microservice Architecture
-            </span>
+            <span className="font-semibold">{skillList.other}</span>
           </span>
         </p>
       </div>

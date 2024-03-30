@@ -1,6 +1,7 @@
 "use client";
-import { avatarImg } from "@/data";
+import { avatarImg, myCvLink, sidebarList } from "@/data";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 type Props = {};
@@ -10,12 +11,12 @@ const Sidebar = (props: Props) => {
   const [currentSection, setCurrentSection] = useState("");
 
   useEffect(() => {
-    setCurrentSection(window.location.href.split("#")[1]);
+    setCurrentSection(`/#${window.location.href.split("#")[1]}`);
   }, []);
 
-  const navigateToSection = (sectionId: string) => {
-    setCurrentSection(sectionId);
-    router.push(`#${sectionId}`);
+  const navigateToSection = (sectionIdUrl: string) => {
+    setCurrentSection(sectionIdUrl);
+    router.push(sectionIdUrl);
   };
   return (
     <div className="fixed w-[272px] bg-gray-100 shadow-xl top-0 bottom-0 left-0 flex flex-col items-center justify-center">
@@ -27,93 +28,47 @@ const Sidebar = (props: Props) => {
         <div className="relative rounded-full w-[176px] h-[176px] overflow-hidden">
           <Image src={avatarImg} alt="my-avatar" fill />
         </div>
-        <button
-          type="button"
-          className="flex items-center 
+        <Link href={myCvLink} target="_blank">
+          <button
+            type="button"
+            className="flex items-center 
           font-semibold gap-2 
           uppercase shadow-md text-black rounded-lg text-sm px-5 
           py-2.5 text-center me-2 mb-2 hover:opacity-85"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6 text-blue-500"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
-            />
-          </svg>
-
-          <p>My Resume</p>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6 text-blue-500"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+              />
+            </svg>
+            <p>My Resume</p>
+          </button>
+        </Link>
       </div>
       <div>
         <ul>
-          <li
-            onClick={() => navigateToSection("about")}
-            className={`text-center mb-3 px-4 py-2 border-b rounded-md hover:text-blue-600 cursor-pointer ${
-              currentSection === "about"
-                ? "text-black border-b-blue-600 font-bold"
-                : "font-semibold border-b-transparent"
-            }`}
-          >
-            About me
-          </li>
-          <li
-            onClick={() => navigateToSection("experience")}
-            className={`text-center mb-3 border-b px-4 py-2 rounded-md hover:text-blue-600 cursor-pointer ${
-              currentSection === "experience"
-                ? "text-black border-b-blue-600 font-bold"
-                : "font-semibold border-b-transparent"
-            }`}
-          >
-            Experience
-          </li>
-          <li
-            onClick={() => navigateToSection("english")}
-            className={`text-center mb-3 border-b px-4 py-2 rounded-md hover:text-blue-600 cursor-pointer ${
-              currentSection === "english"
-                ? "text-black border-b-blue-600 font-bold"
-                : "font-semibold border-b-transparent"
-            }`}
-          >
-            English
-          </li>
-          <li
-            onClick={() => navigateToSection("projects")}
-            className={`text-center mb-3 border-b px-4 py-2 rounded-md hover:text-blue-600 cursor-pointer ${
-              currentSection === "projects"
-                ? "text-black border-b-blue-600 font-bold"
-                : "font-semibold border-b-transparent"
-            }`}
-          >
-            Projects
-          </li>
-          <li
-            onClick={() => navigateToSection("skills")}
-            className={`text-center mb-3 border-b px-4 py-2 rounded-md hover:text-blue-600 cursor-pointer ${
-              currentSection === "skills"
-                ? "text-black border-b-blue-600 font-bold"
-                : "font-semibold border-b-transparent"
-            }`}
-          >
-            Skills & Targets
-          </li>
-          <li
-            onClick={() => navigateToSection("education")}
-            className={`text-center mb-3 border-b px-4 py-2 rounded-md hover:text-blue-600 cursor-pointer ${
-              currentSection === "education"
-                ? "text-black border-b-blue-600 font-bold"
-                : "font-semibold border-b-transparent"
-            }`}
-          >
-            Education
-          </li>
+          {sidebarList.map((sidebarItem) => (
+            <li
+              key={sidebarItem.url}
+              onClick={() => navigateToSection(sidebarItem.url)}
+              className={`text-center mb-3 px-4 py-2 border-b rounded-md hover:text-blue-600 cursor-pointer ${
+                currentSection === sidebarItem.url
+                  ? "text-black border-b-blue-600 font-bold"
+                  : "font-semibold border-b-transparent"
+              }`}
+            >
+              {sidebarItem.name}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
