@@ -5,7 +5,7 @@ type Props = {};
 
 const English = (props: Props) => {
   return (
-    <div className="border-b-2 py-8">
+    <div id="english" className="border-b-2 py-8">
       <h1 className="text-4xl capitalize font-bold text-txtPrimary">English</h1>
       <div className="my-6">
         <ul>

@@ -6,7 +6,7 @@ type Props = {};
 
 const Experience = (props: Props) => {
   return (
-    <div className="border-b-2 py-8">
+    <div id="experience" className="border-b-2 py-8">
       <h1 className="text-4xl capitalize font-bold text-txtPrimary">
         Experience
       </h1>

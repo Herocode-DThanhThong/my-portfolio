@@ -1,10 +1,22 @@
+"use client";
 import { avatarImg } from "@/data";
 import Image from "next/image";
-import React from "react";
-
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 type Props = {};
 
 const Sidebar = (props: Props) => {
+  const router = useRouter();
+  const [currentSection, setCurrentSection] = useState("");
+
+  useEffect(() => {
+    setCurrentSection(window.location.href.split("#")[1]);
+  }, []);
+
+  const navigateToSection = (sectionId: string) => {
+    setCurrentSection(sectionId);
+    router.push(`#${sectionId}`);
+  };
   return (
     <div className="fixed w-[272px] bg-gray-100 shadow-xl top-0 bottom-0 left-0 flex flex-col items-center justify-center">
       <p className="px-4 py-2 text-sm italic text-center mb-4">
@@ -42,22 +54,64 @@ const Sidebar = (props: Props) => {
       </div>
       <div>
         <ul>
-          <li className="text-center mb-3 border-b font-bold px-4 py-2 rounded-md text-black border-b-blue-600">
+          <li
+            onClick={() => navigateToSection("about")}
+            className={`text-center mb-3 px-4 py-2 border-b rounded-md hover:text-blue-600 cursor-pointer ${
+              currentSection === "about"
+                ? "text-black border-b-blue-600 font-bold"
+                : "font-semibold border-b-transparent"
+            }`}
+          >
             About me
           </li>
-          <li className="text-center mb-3 font-semibold px-4 py-2 rounded-md text-black hover:text-blue-600 transition-all ease-in-out duration-300 cursor-pointer">
+          <li
+            onClick={() => navigateToSection("experience")}
+            className={`text-center mb-3 border-b px-4 py-2 rounded-md hover:text-blue-600 cursor-pointer ${
+              currentSection === "experience"
+                ? "text-black border-b-blue-600 font-bold"
+                : "font-semibold border-b-transparent"
+            }`}
+          >
             Experience
           </li>
-          <li className="text-center mb-3 font-semibold px-4 py-2 rounded-md text-black hover:text-blue-600 transition-all ease-in-out duration-300 cursor-pointer">
+          <li
+            onClick={() => navigateToSection("english")}
+            className={`text-center mb-3 border-b px-4 py-2 rounded-md hover:text-blue-600 cursor-pointer ${
+              currentSection === "english"
+                ? "text-black border-b-blue-600 font-bold"
+                : "font-semibold border-b-transparent"
+            }`}
+          >
             English
           </li>
-          <li className="text-center mb-3 font-semibold px-4 py-2 rounded-md text-black hover:text-blue-600 transition-all ease-in-out duration-300 cursor-pointer">
+          <li
+            onClick={() => navigateToSection("projects")}
+            className={`text-center mb-3 border-b px-4 py-2 rounded-md hover:text-blue-600 cursor-pointer ${
+              currentSection === "projects"
+                ? "text-black border-b-blue-600 font-bold"
+                : "font-semibold border-b-transparent"
+            }`}
+          >
             Projects
           </li>
-          <li className="text-center mb-3 font-semibold px-4 py-2 rounded-md text-black hover:text-blue-600 transition-all ease-in-out duration-300 cursor-pointer">
-            Skills
+          <li
+            onClick={() => navigateToSection("skills")}
+            className={`text-center mb-3 border-b px-4 py-2 rounded-md hover:text-blue-600 cursor-pointer ${
+              currentSection === "skills"
+                ? "text-black border-b-blue-600 font-bold"
+                : "font-semibold border-b-transparent"
+            }`}
+          >
+            Skills & Targets
           </li>
-          <li className="text-center mb-3 font-semibold px-4 py-2 rounded-md text-black hover:text-blue-600 transition-all ease-in-out duration-300 cursor-pointer">
+          <li
+            onClick={() => navigateToSection("education")}
+            className={`text-center mb-3 border-b px-4 py-2 rounded-md hover:text-blue-600 cursor-pointer ${
+              currentSection === "education"
+                ? "text-black border-b-blue-600 font-bold"
+                : "font-semibold border-b-transparent"
+            }`}
+          >
             Education
           </li>
         </ul>
