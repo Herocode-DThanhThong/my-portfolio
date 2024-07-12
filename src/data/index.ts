@@ -3,7 +3,7 @@ import educationProgramingProject from '@/assests/project/education-programing-w
 import blogProject from '@/assests/project/blog-website.png';
 
 export const myCvLink =
-  'https://drive.google.com/file/d/1j-da0u2EH56gPscWql0WnnAVhHZ0e3Xn/view?usp=drive_link';
+  'https://drive.google.com/file/d/1ygoNegtUkyr9kyQtEMfFgZfrevJLz9WZ/view?usp=drive_link';
 export const avatarImg = avatar;
 export const currentPosition = 'FullStack Developer';
 export const currentAddress =
