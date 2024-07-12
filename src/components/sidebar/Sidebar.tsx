@@ -1,21 +1,14 @@
-"use client";
-import { avatarImg, myCvLink, sidebarList } from "@/data";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+'use client';
+import { avatarImg, myCvLink, sidebarList } from '@/data';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 type Props = {};
 
 const Sidebar = (props: Props) => {
   const router = useRouter();
-  const [currentSection, setCurrentSection] = useState("");
-
-  useEffect(() => {
-    setCurrentSection(`/#${window.location.href.split("#")[1]}`);
-  }, []);
 
   const navigateToSection = (sectionIdUrl: string) => {
-    setCurrentSection(sectionIdUrl);
     router.push(sectionIdUrl);
   };
   return (
@@ -60,11 +53,7 @@ const Sidebar = (props: Props) => {
             <li
               key={sidebarItem.url}
               onClick={() => navigateToSection(sidebarItem.url)}
-              className={`text-center mb-3 px-4 py-2 border-b rounded-md hover:text-blue-600 cursor-pointer ${
-                currentSection === sidebarItem.url
-                  ? "text-black border-b-blue-600 font-bold"
-                  : "font-semibold border-b-transparent"
-              }`}
+              className={`text-center mb-3 px-4 py-2 border-b rounded-md hover:text-blue-600 cursor-pointer font-medium border-b-transparent`}
             >
               {sidebarItem.name}
             </li>
