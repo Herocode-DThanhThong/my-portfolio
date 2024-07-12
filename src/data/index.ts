@@ -5,17 +5,17 @@ import blogProject from '@/assests/project/blog-website.png';
 export const myCvLink =
   'https://drive.google.com/file/d/1j-da0u2EH56gPscWql0WnnAVhHZ0e3Xn/view?usp=drive_link';
 export const avatarImg = avatar;
-export const currentPosition = 'Frontend Developer (ReactJs)';
+export const currentPosition = 'FullStack Developer';
 export const currentAddress =
   'Ho Van Hue, Phu Nhuan District, Ho Chi Minh City';
 export const skillList = {
-  fe: 'ReactJS (NextJS, Hook, Redux Toolkit), Angular, Material UI, TailwindCSS, Bootstrap, Antd, Typescript',
-  be: 'Java (Springboot), NodeJs (ExpressJs)',
+  fe: 'HTML, CSS, Javascript, Typescript, ReactJS.',
+  be: 'Java, Spring Boot',
   db: 'Postgres, MySQL, MongoDB, Redis',
-  other: 'Git, Docker, Microservice Architecture',
+  other: 'Git, Docker, MUI, Antd, TailwindCSS, Bootstrap, Redux, Redux toolkit',
 };
-export const numberOfYearExp = 1;
-export const languageExp = 'Javascript, ReactJs';
+export const numberOfYearExp = 1.5;
+export const languageExp = 'Javascript, Java, ReactJs, SpringBoot';
 export const contactList = {
   gmail: {
     title: 'duongthanhthong0611@gmail.com',
@@ -58,8 +58,45 @@ export const sidebarList = [
 ];
 export const experiences = [
   {
-    companyName: 'TMA Solutions',
+    companyName: 'Tego Global',
     role: 'Frontend Engineer',
+    url: 'https://tego.global/',
+    time: {
+      fromDateToDate: 'Mar 2024 – Jul 2024',
+      total: '(5 months)',
+    },
+    projects: [
+      {
+        name: 'Swim School',
+        technologies: 'Typescript, ReactJs, SCSS, MUI.',
+        description:
+          'A web app used to assist clubs or water sports centers to effectively manage their daily operations. This system integrates essential processes such as student registration, class scheduling, progress tracking, parent management, etc.',
+        reponsibility: [
+          'Utilized Reactjs library to craft responsive, interactive web designs, ensuring a seamless and user-friendly experience.',
+          'Fixed bugs and implemented features to ensure these are correct with requirements.',
+          'Researched multiple libraries and chose the best for the project, Optimized performance for the website.',
+          'Created and maintained reusable codes and libraries to streamline future development processes.',
+          'Joined meetings with Australian customers to discuss bugs and features.',
+          'Engaged in code reviews and contributed to improving code quality and maintainability.',
+        ],
+      },
+      {
+        name: 'Employee Management System ',
+        technologies:
+          'Typescript, ReactJs, Antd, Redux, Redux toolkit, TailwindCSS.',
+        description:
+          'A web app used by company operators to manage employees, overtime/timesheets, work schedules, benefits, projects, processes/schedules for recruitment candidates, new company announcements, etc.',
+        reponsibility: [
+          'Engaged in daily Scrum meetings with our team to report the task progress, solve the bugs problems, and discuss features.',
+          'Collaborated closely with web designers and backend developers, ensuring alignment with product requirements.',
+          'Developed and optimized features to enhance overall system performance and ensure these are correct with requirements.',
+        ],
+      },
+    ],
+  },
+  {
+    companyName: 'TMA Solutions',
+    role: 'FullStack Engineer',
     url: 'https://www.tmasolutions.vn/',
     time: {
       fromDateToDate: 'May 2023 – Mar 2024',
@@ -67,26 +104,30 @@ export const experiences = [
     },
     projects: [
       {
-        name: 'Ecommerce Project - Petlove',
+        name: 'E-Commerce Website for Pet Products ',
         technologies:
-          'ReactJs, NextJs, Next Auth, Springboot, Redux, Antd Design, Gitlab.',
+          'ReactJs, NextJs, TailwindCSS, Springboot, Redux, Antd, Javascript',
+        description:
+          'A web app used to manage and sell products, and services catering to the needs of pets. The website allows customers to easily find food, toys, supplies, accessories, and health products for different types of pets',
         reponsibility: [
-          'Developed features and fixed bugs based on the tickets.',
-          'Collaborated with QA teams to understand, and troubleshoot reported bugs, ensuring prompt resolution.',
-          'Utilized Postman to test and validate new APIs, guaranteeing reliable and secure communication between frontend and backend components.',
-          'Engaged in code reviews and contributed to improving code quality and maintainability.',
+          'Used ReactJS to develop features, fixed bugs, implemented multiple UIs, and ensured that these were correct with requirements, Figma.',
+          'Collaborated with QA teams and BE teams to understand, and troubleshoot reported bugs, ensuring prompt resolution.',
+          'Designed schema and entities for the database.',
+          'Implemented API for CRUD operations, business logic, and workflows for the system.',
+          'Optimized features enhance the UI/UX, optimize performance for the website, optimize re-render of the component by using hooks (useMemo, useCallback, useRef, …), memo, lazy loading, etc.',
         ],
       },
       {
-        name: 'Network Project - Nokia Altiplano',
+        name: 'Nokia Altiplano',
         technologies:
-          'Java, Javascript, Robot Framework, Netconf Yang, FreeMaker, Docker, Jenkins, and Jira.',
+          'Java, Javascript, Robot Framework, Docker, Jenkins, and Jira.',
+        description: 'A platform used to config network devices.',
         reponsibility: [
-          'Developed and implemented new features for product releases and user stories.',
-          'Conducted critical bug fixes and performed rigorous code reviews to product stability.',
-          'Introduced unit testing to enhance development feedback and code quality.',
-          'Implementing the automation test using RobotFramework.',
-          'Using Jenkins to automate the build process and merge code to master branch.',
+          'Developed and implemented new features for product releases and user stories. ',
+          'Conducted daily meetings with Indian customers and Demo features for them.',
+          'Performed critical bug fixes and rigorous code reviews to ensure product stability. ',
+          'Introduced unit testing, and automation tests to enhance development feedback and code quality.',
+          'Using Jenkins to automate the build process and merge code to the master branch.',
         ],
       },
     ],

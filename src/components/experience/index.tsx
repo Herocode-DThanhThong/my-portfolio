@@ -1,8 +1,8 @@
-import { experiences } from "@/data";
-import Link from "next/link";
-import React from "react";
-import { BiLinkExternal } from "react-icons/bi";
-import { FcEngineering } from "react-icons/fc";
+import { experiences } from '@/data';
+import Link from 'next/link';
+import React from 'react';
+import { BiLinkExternal } from 'react-icons/bi';
+import { FcEngineering } from 'react-icons/fc';
 type Props = {};
 
 const Experience = (props: Props) => {
@@ -16,7 +16,7 @@ const Experience = (props: Props) => {
         <div key={exp.companyName} className="mt-6">
           <div className="flex items-center justify-between">
             <div>
-              <Link href={"https://www.tmasolutions.vn/"} target="_blank">
+              <Link href={exp.url} target="_blank">
                 <h2 className="font-bold text-[#169DFE] text-2xl flex items-center gap-2 cursor-pointer hover:opacity-70 transition-all ease-in-out duration-300">
                   <span>{exp.companyName}</span>
                   <span>
@@ -41,8 +41,8 @@ const Experience = (props: Props) => {
                 <span>
                   <FcEngineering
                     style={{
-                      fontSize: "24px",
-                      color: "#ffffff",
+                      fontSize: '24px',
+                      color: '#ffffff',
                     }}
                   />
                 </span>
@@ -50,11 +50,11 @@ const Experience = (props: Props) => {
               </h3>
               <ul className="mt-2">
                 <li className="text-[16px] my-4">
-                  <strong>Technologies: </strong>{" "}
+                  <strong>Technologies: </strong>{' '}
                   <span>{project.technologies}</span>
                 </li>
                 <li className="text-[16px] my-4">
-                  <strong>My Reponsibility: </strong>{" "}
+                  <strong>My Responsibilities: </strong>{' '}
                   <ul className="list-disc px-8 leading-10">
                     {project.reponsibility.map((res, idx) => (
                       <li key={idx}>{res}</li>
