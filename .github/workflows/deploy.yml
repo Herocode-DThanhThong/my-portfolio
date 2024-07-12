@@ -83,6 +83,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: my-website-artifact-${{ matrix.node-version }}
           path: ./out
 
   # Deployment job
