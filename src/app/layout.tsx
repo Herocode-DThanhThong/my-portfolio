@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Sidebar /> 123
+        <Sidebar /> 1231231
         <div className="min-h-screen">{children}</div>
       </body>
     </html>
